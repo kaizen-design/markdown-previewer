@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
 import './scss/App.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="h-100 d-flex flex-column justify-content-between">
+        <nav className="navbar justify-content-center navbar-dark bg-dark">
+          <a className="navbar-brand" href="#">Markdown Previewer</a>
+        </nav>
+        <main role="main" className="App container my-auto">
+          <div className="row h-100">
+            <div className="col-lg-6 h-100 d-flex align-items-center justify-content-center">
+              <h2>Editor</h2>
+            </div>
+            <div className="col-lg-6 h-100 d-flex align-items-center justify-content-center">
+              <h2>Preview</h2>
+            </div>
+          </div>
+        </main>
+        <footer className="text-center py-3">
+          <div className="container">
+            <small>Designed & built by <a href="#" target="_blank">Denis B.</a></small>
+          </div>
+        </footer>
+      </div>
+    );
+  }
 }
 
 export default App;
