@@ -27,11 +27,13 @@ class App extends React.Component {
         </nav>
         <main role="main" className="App container my-auto pt-4">
           <div className="row h-100">
-            <div className="col-lg-6 h-100 d-flex align-items-center justify-content-center">
+            <div className="col-lg-6 h-100 d-flex flex-column align-items-center justify-content-center">
+              <Title title="Editor" />
               <Editor markdown={this.state.markdown}
                       onChange={this.handleChange} />
             </div>
-            <div className="col-lg-6 h-100 d-flex align-items-center justify-content-center">
+            <div className="col-lg-6 h-100 d-flex flex-column align-items-center justify-content-center">
+              <Title title="Preview" />
               <Preview markdown={this.state.markdown} />
             </div>
           </div>
@@ -48,10 +50,17 @@ class App extends React.Component {
   }
 }
 
+const Title = (props) => {
+  return (
+    <h5 className="w-100 py-2 px-3 mb-0 bg-dark text-white rounded-top shadow-sm"
+        dangerouslySetInnerHTML={{__html: props.title}} />
+  )
+};
+
 const Editor = (props) => {
   return (
     <textarea id="editor"
-              className="h-100 w-100 p-3"
+              className="h-100 w-100 p-3 rounded-bottom shadow-sm"
               value={props.markdown}
               onChange={props.onChange}/>
   )
@@ -60,7 +69,8 @@ const Editor = (props) => {
 const Preview = (props) => {
   return (
     <div id="preview"
-         className="h-100 w-100 p-3 border" dangerouslySetInnerHTML={{__html: marked(props.markdown)}} />
+         className="h-100 w-100 p-3 border rounded-bottom shadow-sm"
+         dangerouslySetInnerHTML={{__html: marked(props.markdown)}} />
   )
 };
 

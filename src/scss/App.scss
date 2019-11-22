@@ -1,4 +1,3 @@
-// Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
 
 html {
@@ -8,7 +7,22 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: $gray-100;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .App {
   flex-grow: 1;
+}
+#editor {
+  border-color: $gray-300;
+  resize: none;
+  overflow-y: auto;
+  &:focus {
+    outline: none;
+  }
+}
+#preview {
+  overflow-y: auto;
+  background-color: $white;
 }
