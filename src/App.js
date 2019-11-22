@@ -24,7 +24,7 @@ class App extends React.Component {
         <nav className="navbar justify-content-center navbar-dark bg-gradient-dark shadow-sm">
           <span className="navbar-brand mb-0 h1">Markdown Previewer</span>
         </nav>
-        <main role="main" className="App container h-100 pt-3 pt-lg-4">
+        <main role="main" className="App container-fluid h-100 pt-3 pt-lg-4 px-lg-4">
           <div className="row h-100">
             <div className="col-lg-6 h-100 mb-3 mb-lg-0">
               <div className="d-flex flex-column h-100">
@@ -77,10 +77,10 @@ const Preview = (props) => {
   )
 };
 
-const placeholder =
-  `# Welcome to my React Markdown Previewer!
+const placeholder = `# Welcome to my React Markdown Previewer!
 
 ## This is a sub-heading...
+
 ### And here's some other cool stuff:
   
 Here's some code, \`<div></div>\`, between 2 backticks.
@@ -116,13 +116,12 @@ And here. | Okay. | I think we get it.
         - That look like this.
 
 
-1. And there are numbererd lists too.
+1. And there are numbered lists too.
 1. Use just 1s if you want! 
 1. But the list goes on...
 - Even if you use dashes or asterisks.
 * And last but not least, let's not forget embedded images:
 
-![Kaizen Logo](https://kaizen-design.ru/wp-content/themes/kaizen/img/logo.png)
-`;
+![Kaizen Logo](https://kaizen-design.ru/wp-content/themes/kaizen/img/logo.png)`;
 
 export default App;
