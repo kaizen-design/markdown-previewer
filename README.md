@@ -1,5 +1,7 @@
-# Markdown Previewer
+# React Markdown Previewer
 
+**Demo**: [https://kaizen-design.github.io/markdown-previewer/](https://kaizen-design.github.io/markdown-previewer/)
+##
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
