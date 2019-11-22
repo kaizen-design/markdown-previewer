@@ -20,20 +20,24 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="h-100">
+      <div className="h-100 d-flex flex-column">
         <nav className="navbar justify-content-center navbar-dark bg-gradient-dark shadow-sm">
           <span className="navbar-brand mb-0 h1">Markdown Previewer</span>
         </nav>
-        <main role="main" className="App container pt-3 pt-lg-4">
+        <main role="main" className="App container h-100 pt-3 pt-lg-4">
           <div className="row h-100">
-            <div className="col-lg-6 mb-3 mb-lg-0">
-              <Title title="Editor" />
-              <Editor markdown={this.state.markdown}
-                      onChange={this.handleChange} />
+            <div className="col-lg-6 h-100 mb-3 mb-lg-0">
+              <div className="d-flex flex-column h-100">
+                <Title title="Editor" />
+                <Editor markdown={this.state.markdown}
+                        onChange={this.handleChange} />
+              </div>
             </div>
-            <div className="col-lg-6 mb-3 mb-lg-0">
-              <Title title="Preview" />
-              <Preview markdown={this.state.markdown} />
+            <div className="col-lg-6 h-100 mb-3 mb-lg-0">
+              <div className="d-flex flex-column h-100">
+                <Title title="Preview" />
+                <Preview markdown={this.state.markdown} />
+              </div>
             </div>
           </div>
         </main>
@@ -59,7 +63,7 @@ const Title = (props) => {
 const Editor = (props) => {
   return (
     <textarea id="editor"
-              className="h-100 w-100 p-3 rounded-bottom shadow-sm"
+              className="w-100 p-3 rounded-bottom shadow-sm"
               value={props.markdown}
               onChange={props.onChange}/>
   )
@@ -68,7 +72,7 @@ const Editor = (props) => {
 const Preview = (props) => {
   return (
     <div id="preview"
-         className="h-100 w-100 p-3 border rounded-bottom shadow-sm"
+         className="w-100 p-3 border rounded-bottom shadow-sm"
          dangerouslySetInnerHTML={{__html: marked(props.markdown)}} />
   )
 };

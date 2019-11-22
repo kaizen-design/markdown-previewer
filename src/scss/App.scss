@@ -11,6 +11,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+img {
+  max-width: 100%;
+}
 .App {
   flex-grow: 1;
 }
@@ -18,11 +21,13 @@ body {
   border-color: $gray-300;
   resize: none;
   overflow-y: auto;
+  flex-grow: 1;
   &:focus {
     outline: none;
   }
 }
 #preview {
+  flex-grow: 1;
   overflow-y: auto;
   background-color: $white;
 }
